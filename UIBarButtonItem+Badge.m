@@ -61,7 +61,9 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
 {
     // Change new attributes
     self.badge.textColor        = self.badgeTextColor;
-    self.badge.backgroundColor  = self.badgeBGColor;
+    //self.badge.backgroundColor  = self.badgeBGColor;
+    self.badge.backgroundColor = [UIColor clearColor];
+    self.badge.layer.backgroundColor = self.badgeBGColor.CGColor;
     self.badge.font             = self.badgeFont;
     
     if (!self.badgeValue || [self.badgeValue isEqualToString:@""] || ([self.badgeValue isEqualToString:@"0"] && self.shouldHideBadgeAtZero)) {
